@@ -36,7 +36,7 @@ public class SelectionSort {
 		for (int i = 0; i < size; i++) {
 			System.out.print(arr[i] + " ");
 		}
-//		System.out.println();
+		System.out.println();
 	}
 
 	// Method definition to sort the array
@@ -52,7 +52,7 @@ public class SelectionSort {
 			min_Index = i;
 
 			// Inner loop, It runs from i+1 to the size of the array
-			for (int j = i + 1; j < size; j++) {
+			for (int j = i + 1; j < size; j++)
 
 				/*
 				 * Now check, min_Index value is greater than the j value or not. If it is true,
@@ -62,15 +62,14 @@ public class SelectionSort {
 					min_Index = j;
 				}
 
-				/*
-				 * Now check, the min_Index value is not equal to the value of i. If it is true,
-				 * then we swap the value of arr[min_Index] with the value of arr[i].
-				 */
-				if (min_Index != i) {
-					int temp = arr[min_Index];
-					arr[min_Index] = arr[i];
-					arr[i] = temp;
-				}
+			/*
+			 * Now check, the min_Index value is not equal to the value of i. If it is true,
+			 * then we swap the value of arr[min_Index] with the value of arr[i].
+			 */
+			if (min_Index != i) {
+				int temp = arr[min_Index];
+				arr[min_Index] = arr[i];
+				arr[i] = temp;
 			}
 		}
 	}
