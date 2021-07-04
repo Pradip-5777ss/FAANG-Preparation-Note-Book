@@ -1,0 +1,51 @@
+/*
+ * Write a program to reverse the array.	
+ */
+
+package Array.ArrayBasicQuestions;
+
+import java.util.Scanner;
+
+public class Question4 {
+
+	public static void main(String[] args) {
+		
+		//scanner class to take user input
+		Scanner sc = new Scanner(System.in);
+		
+		//ask user to enter the size of the array
+		System.out.print("Enter the size of the array : ");
+		int size = sc.nextInt();
+		
+		//enter the size into the array
+		int arr[] = new int[size];
+		
+		//for loop to take enter the array elements from the user
+		System.out.println("Enter the array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		//initialize the size into the another array rev[]
+		int rev[] = new int[size];
+		
+		//declare the variable and initialize it by 0
+		int j = 0;
+		
+		//another for loop to iterate the array into reverse
+		//iterate the for loop from "size-1" to 0
+		//arr[i] value is save into rev[j] and increment the j value
+		for (int i = size-1; i >= 0; i--) {
+			rev[j] = arr[i];
+			j++;
+		}
+		
+		//printing statement
+		//print the reverse array
+		System.out.println("the reverse of the array is : ");
+		for (int i = 0; i < size; i++) {
+			
+			System.out.print(rev[i]+" ");
+		}
+	}
+}
