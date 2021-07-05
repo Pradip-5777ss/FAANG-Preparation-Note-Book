@@ -26,6 +26,7 @@ public class Question9 {
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
+		sc.close();
 
 		//method call
 		System.out.print("The range of the array is : ");

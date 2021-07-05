@@ -31,6 +31,7 @@ public class Question6 {
 		//declare a variable "k" & store the key value
 		System.out.print("Enter the key value : ");
 		int k = sc.nextInt();
+		sc.close();
 		
 		//printing statement
 		

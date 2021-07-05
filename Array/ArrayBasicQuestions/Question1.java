@@ -1,6 +1,6 @@
- /*
-  * Create an Array of size 10 of integers. Take input from the user for these 10 elements and print the entire array after that.
- */
+/*
+ * Create an Array of size 10 of integers. Take input from the user for these 10 elements and print the entire array after that.
+*/
 package Array.ArrayBasicQuestions;
 
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class Question1 {
 		
 		//create scanner class for taking user input
 		Scanner sc = new Scanner(System.in);
-		
+
 		//declare variable for taking user input
 		System.out.println("Enter the size of the array");
 		int size = sc.nextInt();
@@ -32,5 +32,6 @@ public class Question1 {
 		{
 			System.out.print(arr[i] +" ");
 		}
+		sc.close();
 	}
 }

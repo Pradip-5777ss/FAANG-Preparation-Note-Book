@@ -31,6 +31,7 @@ public class Question7 {
 		//declare a variable "n" for take the user input and initialize it
 		System.out.print("Enter the number to find the occurrence : ");
 		int n = sc.nextInt();
+		sc.close();
 		
 		//declare a variable for count the occurrence and initialize it with 0
 		int count = 0;

@@ -26,7 +26,8 @@ public class Question8 {
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
-
+		sc.close();
+		
 		//method call
 		sortArr(arr, size);
 		

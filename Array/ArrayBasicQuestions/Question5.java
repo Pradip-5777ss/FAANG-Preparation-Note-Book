@@ -63,6 +63,7 @@ public class Question5 {
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
+		sc.close();
 		
 		QuickSort(arr, 0,size-1);
 		System.out.println("The sorted elements are : ");

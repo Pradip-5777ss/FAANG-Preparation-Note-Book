@@ -26,7 +26,8 @@ public class Question10 {
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+		sc.close();
+
 		//method call
 		rearrange(arr, size);
 		
@@ -39,8 +40,8 @@ public class Question10 {
 	//method for find the rearrange array
 	static void rearrange(int arr[], int size)
 	{
-		int i,j=0,temp;
-		for(i=0;i<size;i++)
+		int i, j=0, temp;
+		for(i = 0; i < size; i++)
 		{
 			if(arr[i]<0)
 			{

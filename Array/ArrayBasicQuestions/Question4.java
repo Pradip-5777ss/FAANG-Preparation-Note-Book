@@ -20,11 +20,12 @@ public class Question4 {
 		//enter the size into the array
 		int arr[] = new int[size];
 		
-		//for loop to take enter the array elements from the user
+		//Ask user to enter the array elements
 		System.out.println("Enter the array elements : ");
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
+		sc.close();
 		
 		//initialize the size into the another array rev[]
 		int rev[] = new int[size];
@@ -40,11 +41,9 @@ public class Question4 {
 			j++;
 		}
 		
-		//printing statement
 		//print the reverse array
 		System.out.println("the reverse of the array is : ");
 		for (int i = 0; i < size; i++) {
-			
 			System.out.print(rev[i]+" ");
 		}
 	}
