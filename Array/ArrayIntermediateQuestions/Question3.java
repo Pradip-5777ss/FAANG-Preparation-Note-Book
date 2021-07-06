@@ -1,7 +1,7 @@
 /*
- * You	are	given	a	list	of	n-1	integers	and	these	integers	are	in	the	range	
-	of	1	to	n.	There	are	no	duplicates	in	the	list.	One	of	the	integers	is	
-	missing	in	the	list.	Write	an	efficient	code	to	find	the	missing	integer.
+ * You are given a list of n-1 integers and these integers are in the range	
+	of 1 to n. There are no duplicates in the list. One of the integers is	
+	missing	in the list. Write an efficient code to find the missing integer.
  */
 
 package Array.ArrayIntermediateQuestions;
@@ -27,6 +27,7 @@ public class Question3 {
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
+		sc.close();
 		
 		//method call
 		//declare a variable name "missNo" for store the missing number
@@ -34,7 +35,7 @@ public class Question3 {
 		
 		//printing statement
 		//print the missing number
-		System.out.println("The missing number is = "+missNo);
+		System.out.println("The missing number is = " + missNo);
 		
 	}
 	
@@ -49,7 +50,9 @@ public class Question3 {
 		
 		//iterate for loop to find the missing number in the array
 		for (i = 0; i < size; i++) {
-			//we simply iterate the loop and when the condition is true then subtract the array element with total and store it in total for the next iteration.
+			/**
+			 * we simply iterate the loop and when the condition is true then subtract the array element with total and store it in total for the next iteration.
+			 */
 			total = total - arr[i];
 		}
 		
