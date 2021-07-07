@@ -1,5 +1,5 @@
 /**
- * Write a Program to check whether the Singly Linked list is apalindrome or not.
+ * Write a Program to check whether the Singly Linked list is a palindrome or not.
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -11,7 +11,7 @@ public class CheckSinglyLLPalindrome {
     static Node tail;
     static Node temp;
 
-    public class Node {
+    class Node {
         int data;
         Node next;
 
@@ -100,7 +100,7 @@ public class CheckSinglyLLPalindrome {
          */
         int mid = (size - 1) / 2;
 
-        // Using a pointer to get to middle element element to get seconf half of list
+        // Using a pointer to get to middle element element to get second half of list
         while (mid > 0) {
             temp = temp.next;
             mid--;
@@ -163,7 +163,9 @@ public class CheckSinglyLLPalindrome {
     private static void printLL() {
 
         temp = head;
+
         System.out.println("The output LL is : ");
+
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
