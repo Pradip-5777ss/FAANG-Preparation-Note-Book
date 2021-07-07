@@ -1,5 +1,5 @@
 /**
- * Write a Program to check	whether the Singly Linked list is apalindrome or not.
+ * Write a Program to check whether the Singly Linked list is apalindrome or not.
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
