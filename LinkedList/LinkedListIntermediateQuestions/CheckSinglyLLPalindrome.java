@@ -1,3 +1,6 @@
+/**
+ * Write a Program to check	whether the Singly Linked list is apalindrome or not.
+ */
 package LinkedList.LinkedListIntermediateQuestions;
 
 import java.util.Scanner;
@@ -158,7 +161,7 @@ public class CheckSinglyLLPalindrome {
 
     // Method to print the linked list
     private static void printLL() {
-        
+
         temp = head;
         System.out.println("The output LL is : ");
         while (temp != null) {
