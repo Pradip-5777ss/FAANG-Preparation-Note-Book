@@ -36,21 +36,10 @@ public class DetectLoopInLL {
 
         // Ask user to enter the elements of the linked list
         System.out.println("Enter the elements of the linked list");
-
-        // Take the first node value of the linked list
-        int num = sc.nextInt();
-
-        // Assign that value as the head node of the linked list
-        head = dLoopInLL.new Node(num);
-
-        // Store the head address into the tail
-        tail = head;
-
-        // run a loop and take other elements of the list
-        for (int i = 1; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             int val = sc.nextInt();
-            tail.next = dLoopInLL.new Node(val);
-            tail = tail.next;
+            Node hNode = dLoopInLL.new Node(val);
+            createNewNode(hNode);
         }
 
         // Ask user to enter the position of the node for create the loop
@@ -71,6 +60,23 @@ public class DetectLoopInLL {
         } else {
             System.out.println("Loop not detected");
         }
+    }
+
+    // Method to add elements in the list
+    private static void createNewNode(Node node) {
+
+        if (head == null) {
+            head = node;
+            return;
+        }
+
+        temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = node;
+        tail = temp.next;
     }
 
     /**
