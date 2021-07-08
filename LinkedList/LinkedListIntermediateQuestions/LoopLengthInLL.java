@@ -1,3 +1,6 @@
+/**
+ * Write a program to find the length of loop in the linked list.
+ */
 package LinkedList.LinkedListIntermediateQuestions;
 
 import java.util.Scanner;
@@ -121,7 +124,7 @@ public class LoopLengthInLL {
         }
 
         tempNode = head;
-        
+
         for (int i = 1; i < pos; i++) {
             tempNode = tempNode.nextNode;
         }
