@@ -1,3 +1,6 @@
+/**
+ * Write a program to reverse a linked list in group of given size.
+ */
 package LinkedList.LinkedListIntermediateQuestions;
 
 import java.util.Scanner;
@@ -96,7 +99,7 @@ public class ReverseLLInGroup {
 
     //  Method to add element in the list
     private static void createNewNode(Node node) {
-        
+
         if (head == null) {
             head = node;
             return;
