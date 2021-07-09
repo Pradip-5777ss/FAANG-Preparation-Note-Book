@@ -59,7 +59,7 @@ public class LoopLengthInLL {
 
     }
 
-    // Method to add elements in the loop
+    // Method to add elements in the list
     private static void createNewNode(Node node) {
         if (headNode == null) {
             headNode = node;
