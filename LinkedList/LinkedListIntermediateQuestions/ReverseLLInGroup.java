@@ -80,8 +80,8 @@ public class ReverseLLInGroup {
          * Checking if there are nodes ahead.
          * Reversing those nodes recursively.
          */ 
-        if (next != null) {
-            node.nextNode = reverse(next, k);
+        if (curr != null) {
+            node.nextNode = reverse(curr, k);
         }
         return prev;
     }
