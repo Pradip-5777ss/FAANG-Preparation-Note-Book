@@ -58,10 +58,10 @@ public class MergeSortForLL {
 
         /**
          * Splitting the list into two halves 
-         * 1. First find the middle of the list 
+         * 1. First find the middle of the list.
          * 2. Then split the list into two halves, head to middle & next of the middle to
          * last. 
-         * 3. Make next of the middle as null to split the list
+         * 3. Make next of the middle as null to split the list.
          */
         Node middle = getMiddle(head);
         Node nextOfMiddle = middle.nextNode;
