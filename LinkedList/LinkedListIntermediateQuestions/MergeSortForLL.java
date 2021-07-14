@@ -62,10 +62,14 @@ public class MergeSortForLL {
          * last. 3. Make next of the middle as null to split the list
 =======
          * Splitting the list into two halves 
-         * 1. First find the middle of the list 
+         * 1. First find the middle of the list.
          * 2. Then split the list into two halves, head to middle & next of the middle to
          * last. 
+<<<<<<< HEAD
          * 3. Make next of the middle as null to split the list
+>>>>>>> testing
+=======
+         * 3. Make next of the middle as null to split the list.
 >>>>>>> testing
          */
         Node middle = getMiddle(head);
