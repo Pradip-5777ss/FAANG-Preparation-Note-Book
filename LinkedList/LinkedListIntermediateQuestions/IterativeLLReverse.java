@@ -42,13 +42,14 @@ public class IterativeLLReverse {
 
         sc.close();
 
-        // Print the general list
+        // Method call to Print the general list
         System.out.println("The general list is");
         printList();
 
         // Method call to reverse the list
         reverseNode();
 
+        //  Method call to print the reverse list
         System.out.println("The reverse list is");
         printList();
     }
