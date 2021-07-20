@@ -41,6 +41,8 @@ public class SegregateEvenAndOddNodesInLL {
             createNewNode(hNode);
         }
 
+        sc.close();
+
         // Method call to print the general list
         System.out.print("The general list is : ");
         printList();
