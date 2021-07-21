@@ -25,6 +25,8 @@ public class TwoStringsAreAnagramOrNot {
         System.out.println("Enter the second string : ");
         String str2 = sc.nextLine();
 
+        sc.close();
+
         // Convert the string into array
         char ch2[] = str2.toCharArray();
 
