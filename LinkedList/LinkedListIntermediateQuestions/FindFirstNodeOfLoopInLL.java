@@ -92,25 +92,19 @@ public class FindFirstNodeOfLoopInLL {
         Node slow = head;
         Node fast = head;
 
-        // Move slow pointer 1 node ahead
-        slow = slow.nextNode;
-
-        // Move fast pointer 2 nodes ahead
-        fast = fast.nextNode.nextNode;
-
         // Search loop using first and slow pointer
         while (fast != null && fast.nextNode != null) {
-
-            // If condition true then break the loop
-            if (slow == fast) {
-                break;
-            }
 
             // slow pointer moves 1 nodes ahead everytime
             slow = slow.nextNode;
 
             // fast pointer moves 2 nodes ahead everytime
             fast = fast.nextNode.nextNode;
+
+            // If condition true then break the loop
+            if (slow == fast) {
+                break;
+            }
         }
 
         // If loop does not exists
