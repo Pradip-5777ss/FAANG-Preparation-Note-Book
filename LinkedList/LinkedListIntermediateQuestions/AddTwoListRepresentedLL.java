@@ -30,7 +30,7 @@ public class AddTwoListRepresentedLL {
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the size of the 1st linked list
-        System.out.println("Enter the length of list1 : ");
+        System.out.print("Enter the length of list1 : ");
         int length = sc.nextInt();
         
         //  Ask user to enter the elements of the 1st list
@@ -46,7 +46,7 @@ public class AddTwoListRepresentedLL {
         }
 
         //  Ask user to enter the length of the 2nd linked list
-        System.out.println("Enter the length of list2 : ");
+        System.out.print("Enter the length of list2 : ");
         int length2 = sc.nextInt();
 
         //  Ask user to enter the elements of the 2nd list
@@ -67,7 +67,7 @@ public class AddTwoListRepresentedLL {
         Node res = addTwoList(firstList, secondList);
 
         //  Method call to Print the list
-        System.out.println("the new list is : ");
+        System.out.print("the new list is : ");
         printList(res);
 
     }
@@ -76,7 +76,7 @@ public class AddTwoListRepresentedLL {
     private static void printList(Node node) {
 
         while (node != null) {
-            System.out.println(node.data + " ");
+            System.out.print(node.data + " ");
             node = node.nextNode;
         }
         System.out.println();
