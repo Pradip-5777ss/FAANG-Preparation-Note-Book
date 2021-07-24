@@ -86,31 +86,27 @@ public class DetectLoopInLL {
     private static boolean detectLoop(Node head) {
 
         /**
-         * Using two pointer and moving one pointer(slow) by one node and another
-         * pointer(fast) by two nodes in each iteration.
+         * Using two pointer initially both are pointed to head
          */
-        Node fast = head.next;
+        Node fast = head;
         Node slow = head;
 
-        while (fast != slow) {
+        while (fast != null && fast.next != null) {
 
             /**
-             * If the node pointed by the first pointer(fast) or the node next to it is
-             * null, then it return false
+             * moving one pointer(slow) by one node and another pointer(fast) by two nodes
+             * in each iteration.
              */
-            if (fast == null || fast.next == null) {
-                return false;
-            }
             fast = fast.next.next;
             slow = slow.next;
+
+            // If both nodes are at same position then returns true
+            if (fast == slow) {
+                return true;
+            }
         }
 
-        /**
-         * If the above condition is true, it means both the pointers fast and slow
-         * point to the same node. which shows the presence of the loop in the linked
-         * list and it returns true.
-         */
-        return true;
+        return false;
     }
 
     // Method to create the loop in the linked list
