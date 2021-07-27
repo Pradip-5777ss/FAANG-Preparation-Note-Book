@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class CheckSinglyLLPalindrome {
 
-    static Node head;
-    static Node tail;
+    static Node headNode;
+    static Node tailNode;
     static Node temp;
 
     class Node {
@@ -49,7 +49,7 @@ public class CheckSinglyLLPalindrome {
         printLL();
 
         // Method call to check wheather the list is palindrome or not
-        if (is_palindrome(head) == true) {
+        if (is_palindrome(headNode) == true) {
             System.out.println("Is Palindrome");
         } else {
             System.out.println("Not Palindrome");
@@ -59,12 +59,12 @@ public class CheckSinglyLLPalindrome {
     // Method to add elements in linked list
     private static void createNewNode(Node node) {
 
-        if (head == null) {
-            head = node;
+        if (headNode == null) {
+            headNode = node;
             return;
         }
 
-        temp = head;
+        temp = headNode;
 
         while (temp.next != null) {
             temp = temp.next;
@@ -77,10 +77,12 @@ public class CheckSinglyLLPalindrome {
 
         // Declare a variable and initialize by 0
         int size = 0;
+        temp = head;
 
         // Finding the number of nodes in the list
-        for (temp = head; temp != null; temp = temp.next) {
+        while (temp != null) {
             size++;
+            temp = temp.next;
         }
 
         /**
@@ -162,7 +164,7 @@ public class CheckSinglyLLPalindrome {
     // Method to print the linked list
     private static void printLL() {
 
-        temp = head;
+        temp = headNode;
 
         System.out.println("The output LL is : ");
 
