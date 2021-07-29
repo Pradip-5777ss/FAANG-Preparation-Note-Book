@@ -20,6 +20,7 @@ public class FindMinMaxOfAnArray {
 		int arr[] = new int[size];
 
 		// Run a loop to take enter the array elements from the user
+		System.out.println("Enter the array elements");
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
