@@ -1,5 +1,16 @@
 /**
- * Write a program to segregate even and odd nodes in a linked list
+ * Write a program to segregate even and odd nodes in a linked list.
+ * 
+ * Given a link list of size N, modify the list such that all the even 
+ * numbers appear before all the odd numbers in the modified list. 
+ * The order of appearance of numbers within each segregation should 
+ * be same as that in the original list.
+ * 
+ * Example:
+ *      Input: N = 7
+ *      Link List = 17 -> 15 -> 8 -> 9 -> 2 -> 4 -> 6 -> NULL
+ * Output: 8 2 4 6 17 15 9
+ * Explaination: 8,2,4,6 are the even numbers so they appear first and 17,15,9 are odd so they appear after the even number.
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -70,18 +81,24 @@ public class SegregateEvenAndOddNodesInLL {
     // Method to segregate the list
     private static void segregateEvenOdd() {
 
+        // Declare Nodes to store even numbers
         Node evenStart = null;
         Node evenEnd = null;
 
+        // Declare Nodes to store odd numbers
         Node oddStart = null;
         Node oddEnd = null;
 
+        // Declare Node to store the headNode
         Node curr = headNode;
 
+        // Traverse through the whole list
         while (curr != null) {
 
+            // Declare a variable to store the current node data
             int element = curr.data;
 
+            // If the current node data is even then store that particular node in evenNode
             if (element % 2 == 0) {
                 if (evenStart == null) {
                     evenStart = curr;
@@ -90,7 +107,10 @@ public class SegregateEvenAndOddNodesInLL {
                     evenEnd.nextNode = curr;
                     evenEnd = evenEnd.nextNode;
                 }
-            } else {
+            }
+
+            // Else, store the particular node in oddNode
+            else {
                 if (oddStart == null) {
                     oddStart = curr;
                     oddEnd = oddStart;
@@ -104,12 +124,19 @@ public class SegregateEvenAndOddNodesInLL {
             curr = curr.nextNode;
         }
 
+        // If both the even and odd Node is null then return
         if (evenStart == null || oddStart == null) {
             return;
         }
 
+        /**
+         * Store the oddNode as the nextNode of evenNode and make the nextNode of
+         * oddNode as null
+         */
         evenEnd.nextNode = oddStart;
         oddEnd.nextNode = null;
+
+        // Finally, make the evenNode as headNode.
         headNode = evenStart;
     }
 
