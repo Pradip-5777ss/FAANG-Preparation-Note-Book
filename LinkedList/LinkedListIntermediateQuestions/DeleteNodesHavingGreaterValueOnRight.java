@@ -1,5 +1,13 @@
 /**
  * Delete nodes which having greater value on right side.
+ * 
+ * Example:
+ * Input:
+ *      LinkedList = 12->15->10->11->5->6->2->3
+ * Output: 15 11 6 3
+ * Explanation: Since, 12, 10, 5 and 2 are the elements which have greater 
+ * elements on the following nodes. So, after deleting them, the linked list 
+ * would like be 15,11, 6, 3.
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -97,7 +105,6 @@ public class DeleteNodesHavingGreaterValueOnRight {
             }
         }
 
-        
         // reversing list again to get required result
         curr = head;
         prev = null;
