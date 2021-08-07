@@ -10,8 +10,8 @@
  * Explanation:
  *      The test case has 4 sorted linked 
  *      list of size 3, 2, 2, 2 
- *      1st    list     1 -> 2-> 3
- *      2nd   list      4->5
+ *      1st    list      1 -> 2-> 3
+ *      2nd    list      4->5
  *      3rd    list      5->6
  *      4th    list      7->8
  *      The merged list will be 1->2->3->4->5->5->6->7->8.
