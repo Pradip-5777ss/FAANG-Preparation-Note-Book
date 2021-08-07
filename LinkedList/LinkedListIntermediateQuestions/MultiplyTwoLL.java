@@ -1,3 +1,14 @@
+/**
+ * Multiply two linked list.
+ * Given elements as nodes of the two linked lists. The task is to multiply these two linked lists, say L1 and L2. 
+ * Note: The output could be large take modulo 10^9+7.
+ * 
+ * Example :
+ * Input :
+ *      L1: 1->2->3
+ *      L2: 4->5
+ * Output : 5535
+ */
 package LinkedList.LinkedListIntermediateQuestions;
 
 import java.util.Scanner;
@@ -69,31 +80,37 @@ public class MultiplyTwoLL {
         printList(headNode2);
 
         //  Method call to multiply two list
-        long newHead = muktiplyList(headNode1, headNode2);
+        long result = multiplyList(headNode1, headNode2);
 
         //  Print the result
-        System.out.println("After multiply two list the result is : " + newHead);
+        System.out.println("After multiply two list the result is : " + result);
     }
 
     //  Method to multiply two linked list
-    private static long muktiplyList(Node firstlist, Node secondlist) {
+    private static long multiplyList(Node firstlist, Node secondlist) {
 
         long N = 1000000007;
+
+        //  Declare two variable to store the linked list as number
         long num1 = 0, num2 = 0;
 
+        //  Run a loop until both list is not null
         while (firstlist != null || secondlist != null) {
 
+            //  Traverse the first list until it is not null
             if (firstlist != null) {
                 num1 = ((num1 * 10)%N + firstlist.data);
                 firstlist = firstlist.nextNode;
             }
 
+            //  Traverse the second list until it is not null
             if (secondlist != null) {
                 num2 = ((num2 * 10)%N + secondlist.data);
                 secondlist = secondlist.nextNode;
             }
         }
 
+        //  Multiply two numbers and return the result
         return ((num1%N) * (num2%N)) %N;
     }
 
