@@ -28,15 +28,15 @@ public class GetNthNodeFromEnd {
 		Scanner sc = new Scanner(System.in);
 
 		// Ask user to enter the length of the linked list
-		System.out.println("Enter the length of the linked list : ");
+		System.out.print("Enter the length of the linked list : ");
 		int length = sc.nextInt();
+
+		// Create onject of the class
+		GetNthNodeFromEnd list = new GetNthNodeFromEnd();
 
 		// Ask user to enter the elements of the linked list
 		System.out.println("Enter the elements of the Linked list");
-		
-		//	Create onject of the class
-		GetNthNodeFromEnd list = new GetNthNodeFromEnd();
-		
+
 		// Iterate a loop and tak user input
 		for (int i = 0; i < length; i++) {
 			int val = sc.nextInt();
@@ -45,7 +45,7 @@ public class GetNthNodeFromEnd {
 		}
 
 		// Ask user to enter the nth node position
-		System.out.println("Enter the Index of the Nth node : ");
+		System.out.print("Enter the Index of the Nth node : ");
 		int index = sc.nextInt();
 
 		// Print the nth node value from end of the linked list
@@ -53,7 +53,7 @@ public class GetNthNodeFromEnd {
 		sc.close();
 	}
 
-    // Method to add elements in linked list
+	// Method to add elements in linked list
 	private static void createNewNode(Node node) {
 
 		if (head == null) {
@@ -78,11 +78,7 @@ public class GetNthNodeFromEnd {
 		 */
 		Node currentNode = head, nthNode = head;
 
-		/**
-		 * First check the index is null or not. Then check the currentnode is null or
-		 * not, If it is null then it returns -1. If both the conditions are true then
-		 * increment the currentnode value. And decrement the index value.
-		 */
+		// traversing first n elements with first pointer.
 		while (n != 0) {
 			if (currentNode == null) {
 				return -1;
