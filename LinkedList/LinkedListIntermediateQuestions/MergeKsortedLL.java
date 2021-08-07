@@ -1,5 +1,20 @@
 /**
- * Write a program to Merge k sorted linked list
+ * Write a program to Merge k sorted linked list.
+ * Given K sorted linked lists of different sizes. The task is to merge them in such a way that after merging they will be a single sorted linked list.
+ * 
+ * Example :
+ * Input:
+ *      K = 4
+ *      value = {{1,2,3},{4 5},{5 6},{7,8}}
+ * Output: 1->2->3->4->5->5->6->7->8
+ * Explanation:
+ *      The test case has 4 sorted linked 
+ *      list of size 3, 2, 2, 2 
+ *      1st    list     1 -> 2-> 3
+ *      2nd   list      4->5
+ *      3rd    list      5->6
+ *      4th    list      7->8
+ *      The merged list will be 1->2->3->4->5->5->6->7->8.
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -69,9 +84,7 @@ public class MergeKsortedLL {
     // Method to merge k sorted linked list
     private static Node mergeKlist(Node[] arr, int K) {
 
-        int N = K;
-
-        int last = N - 1;
+        int last = K - 1;
 
         while (last != 0) {
             int i = 0;
@@ -79,8 +92,10 @@ public class MergeKsortedLL {
 
             while (i < j) {
 
-                // calling merge function to merge two different list into
-                // one list which has sorted elements.
+                /**
+                 * calling merge function to merge two different list into one list which has
+                 * sorted elements.
+                 */
                 arr[i] = merge(arr[i], arr[j]);
 
                 // going for the next pair of lists.
@@ -88,8 +103,9 @@ public class MergeKsortedLL {
                 j--;
 
                 // if all pairs are merged, we update the last.
-                if (i >= j)
+                if (i >= j) {
                     last = j;
+                }
             }
         }
         // returning the merged list.
