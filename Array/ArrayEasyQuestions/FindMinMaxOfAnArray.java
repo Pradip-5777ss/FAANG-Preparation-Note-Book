@@ -1,5 +1,5 @@
 /*
- * Find	the	minimum	and	maximum	element	in an array.	
+ * Write a program to find the minimum and maximum element in the array.
  */
 package Array.ArrayEasyQuestions;
 
