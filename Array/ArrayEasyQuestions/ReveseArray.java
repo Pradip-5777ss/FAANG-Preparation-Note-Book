@@ -26,25 +26,36 @@ public class ReveseArray {
 		}
 		sc.close();
 
-		// initialize the size into the another array
-		int rev[] = new int[size];
+		//	Method call to reverse the array
+		reverseArr(arr);
 
-		// declare the variable and initialize it by 0
-		int j = 0;
+		//	Method call to print the array
+		printArr(arr);
+	}
 
-		/**
-		 * another for loop to iterate the array into reverse iterate the for loop from
-		 * "size-1" to 0 arr[i] value is save into rev[j] and increment the j value
-		 */
-		for (int i = size - 1; i >= 0; i--) {
-			rev[j] = arr[i];
-			j++;
+	//	Method to print the array
+	private static void printArr(int[] arr) {
+
+		System.out.print("The output array is : ");
+		for (int i : arr) {
+			System.out.print(i + " ");
 		}
+		System.out.println();
+	}
 
-		// print the reverse array
-		System.out.println("the reverse of the array is : ");
-		for (int i = 0; i < size; i++) {
-			System.out.print(rev[i] + " ");
+	//	Method to reverse the array
+	private static void reverseArr(int[] arr) {
+		
+		// Declare two pointers
+		int start = 0, end = arr.length - 1;
+
+		// swap the array
+		while (start < end) {
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+			start++;
+			end--;
 		}
 	}
 }
