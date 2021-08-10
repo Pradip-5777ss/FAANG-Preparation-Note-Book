@@ -26,27 +26,30 @@ public class FindMinMaxOfAnArray {
 		}
 		sc.close();
 
-		// declare the variable
+		// Method call to find the maximum and minimum of the array
+		findMinAndMax(arr);
+	}
+
+	// Method to find the maximum and minimum of the array
+	private static void findMinAndMax(int[] arr) {
+
+		// Declare two variables
 		int min, max;
 
-		// initialize the variable by arr[0]
+		// Both are initialize by the 0th index element of the array
 		min = max = arr[0];
 
-		/**
-		 * for loop to find the maximum and minimum element. if arr[i] is greater than
-		 * max then the element is maximum. if arr[i] is lower than max then the element
-		 * is minimum.
-		 */
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < arr.length; i++) {
+
 			if (arr[i] > max) {
 				max = arr[i];
 			}
-			if (arr[i] < min) {
+			else if (arr[i] < min) {
 				min = arr[i];
 			}
 		}
 
-		// printing statement
+		// Print the maximum and minimum element of the array
 		System.out.println("The minimum element is : " + min);
 		System.out.println("The maximum element is : " + max);
 	}
