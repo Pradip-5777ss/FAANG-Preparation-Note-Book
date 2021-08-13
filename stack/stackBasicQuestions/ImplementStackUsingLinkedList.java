@@ -91,10 +91,10 @@ public class ImplementStackUsingLinkedList {
 
 		System.out.println("The top element is = " + stackULL.peekElement());
 
-		System.out.println("The elements of the stack ");
+		System.out.println("The elements of the stack are");
 		while (!stackULL.isEmpty()) {
 			int data = stackULL.pop();
-			System.out.println(data + "");
+			System.out.println(data + " ");
 		}
 	}
 }
