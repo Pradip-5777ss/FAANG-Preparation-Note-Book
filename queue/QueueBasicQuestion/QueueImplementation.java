@@ -1,4 +1,4 @@
-package queue.QueueBasicQuestion;
+package Queue.QueueBasicQuestion;
 
 public class QueueImplementation {
 	
