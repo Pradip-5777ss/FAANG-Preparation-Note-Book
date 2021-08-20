@@ -12,24 +12,21 @@
  */
 package stack.stackBasicQuestions;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Stack;
 
 public class EvaluationOfPostfixOperation {
 
-    public static void main(String[] args) {
-
-        // Create Scanner class object to take user input
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
 
         // Ask user to enter the string
-        System.out.print("Enter the string : ");
-        String str = sc.next();
+        System.out.print("Enter the String : ");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        sc.close();
-
-        // Print the result
-        System.out.println("After solving the expression the result is = " + postfixEvaluation(str));
+        // Method call to evalueate a postfix expression
+        System.out.print("After solving the expression the result is = " + postfixEvaluation(br.readLine().trim()));
     }
 
     // Method to evaluate a postfix expression
