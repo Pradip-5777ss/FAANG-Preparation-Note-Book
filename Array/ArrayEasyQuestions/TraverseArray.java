@@ -1,6 +1,7 @@
-/*
- * Create an Array of size 10 of integers. Take input from the user for these 10 elements and print the entire array after that.
-*/
+/**
+ * Create an Array of size 10 of integers. Take input from the user 
+ * for these 10 elements and print the entire array after that.
+ */
 package Array.ArrayEasyQuestions;
 
 import java.util.Scanner;

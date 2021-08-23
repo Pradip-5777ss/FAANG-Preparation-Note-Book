@@ -38,9 +38,9 @@ public class Stack {
 			return x;
 		}
 	}
-//}
+	// }
 
-// Driver code
+	// Driver code
 	// function to reverse the string
 	public static void reverse(StringBuffer str) {
 		// Create a stack of capacity
