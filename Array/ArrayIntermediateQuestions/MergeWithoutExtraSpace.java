@@ -4,13 +4,12 @@
  * contains the first N elements and modify arr2 so that it contains the last M elements.
  * 
  * Example : 
- * 
- * Input: 
- *      n = 4, arr1[] = [1 3 5 7] 
- *      m = 5, arr2[] = [0 2 6 8 9]
- * Output: 
- *      arr1[] = [0 1 2 3] 
- *      arr2[] = [5 6 7 8 9]
+ *      Input: 
+ *          n = 4, arr1[] = [1 3 5 7] 
+ *          m = 5, arr2[] = [0 2 6 8 9]
+ *      Output: 
+ *          arr1[] = [0 1 2 3] 
+ *          arr2[] = [5 6 7 8 9]
  */
 package Array.ArrayIntermediateQuestions;
 
@@ -55,11 +54,11 @@ public class MergeWithoutExtraSpace {
 
         // Print the first array
         System.out.print("The first array is : ");
-        printArr(arr1, size1);
+        printArr(arr1);
 
         // Print the second array
         System.out.print("The second array is : ");
-        printArr(arr2, size2);
+        printArr(arr2);
 
         StringBuffer str = new StringBuffer();
 
@@ -76,9 +75,9 @@ public class MergeWithoutExtraSpace {
     }
 
     // Method to print the array
-    private static void printArr(int[] arr, int size) {
-        for (int i = 0; i < size; i++) {
-            System.out.print(arr[i] + " ");
+    private static void printArr(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
         }
         System.out.println();
     }
@@ -90,8 +89,11 @@ public class MergeWithoutExtraSpace {
         int i = arr1.length - 1, j = 0;
 
         while (i >= 0 && j < arr2.length) {
-            // If the first array element is greater than the second array element then swap
-            // them & update two pointers
+
+            /**
+             * If the first array element is greater than the second array element then swap
+             * them & update two pointers
+             */
             if (arr1[i] > arr2[j]) {
                 int temp = arr1[i];
                 arr1[i] = arr2[j];
