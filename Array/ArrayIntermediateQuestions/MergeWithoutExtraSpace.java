@@ -12,10 +12,13 @@
  *      Output: 
  *          arr1[] = [0 1 2 3] 
  *          arr2[] = [5 6 7 8 9]
+ * 
+ * Explanation: After merging the two non-decreasing arrays, we get, 0 1 2 3 5 6 7 8 9.
  */
 package Array.ArrayIntermediateQuestions;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class MergeWithoutExtraSpace {
 
@@ -90,11 +93,14 @@ public class MergeWithoutExtraSpace {
         // Use two pointer
         int i = arr1.length - 1, j = 0;
 
+        /**
+         * Iterate through every element of arr1 & arr2 using two pointer
+         */
         while (i >= 0 && j < arr2.length) {
 
             /**
              * If the first array element is greater than the second array element then swap
-             * them & update two pointers
+             * them & decrement i and increment j.
              */
             if (arr1[i] > arr2[j]) {
                 int temp = arr1[i];
