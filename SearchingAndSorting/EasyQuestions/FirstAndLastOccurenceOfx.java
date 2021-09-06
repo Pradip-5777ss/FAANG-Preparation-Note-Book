@@ -43,7 +43,7 @@ public class FirstAndLastOccurenceOfx {
 
         // Method call to find the occurence and print the result
         ArrayList<Integer> ans = findOccurence(arr, x);
-        System.out.println(ans);
+        System.out.println("The output is : " + ans);
     }
 
     // Method to find the occurence
