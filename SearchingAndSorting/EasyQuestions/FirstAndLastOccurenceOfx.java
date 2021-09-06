@@ -1,4 +1,6 @@
 /**
+ * First and last occurrences of x.
+ * 
  * Given a sorted array arr containing n elements with possibly 
  * duplicate elements, the task is to find indexes of first and 
  * last occurrences of an element x in the given array.
