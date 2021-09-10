@@ -1,4 +1,4 @@
-/*
+/**
  * Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algorithm.	
  */
 package Array.ArrayEasyQuestions;
@@ -34,7 +34,7 @@ public class Sort012WithoutUsingSortingAlgo {
 		printArr(arr, size);
 	}
 
-	// method for sorting the array.
+	// method to sort the array without using sorting algo
 	static void sortArr(int arr[], int size) {
 
 		/**
@@ -46,8 +46,8 @@ public class Sort012WithoutUsingSortingAlgo {
 		while (pos <= end) {
 
 			/**
-			 * If the element of a particular position is 0 then swap it with first index
-			 * element of the array. And increment start and position pointer.
+			 * If the element of a particular position is 0 then swap it with start
+			 * index of the array. And increment start and position pointer.
 			 */
 			if (arr[pos] == 0) {
 				int temp = arr[start];
