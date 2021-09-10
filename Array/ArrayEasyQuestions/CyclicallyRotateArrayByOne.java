@@ -1,5 +1,9 @@
 /**
  * Write a program to cyclically rotate an array by one.
+ * 
+ * Example :
+ *      Input : N = 5, arr[] = {1, 2, 3, 4, 5}
+ *      Output : arr[] = {6, 1, 2, 3, 4}
  */
 package Array.ArrayEasyQuestions;
 
@@ -48,7 +52,10 @@ public class CyclicallyRotateArrayByOne {
         // Store the last element of the array in a variable
         int temp = arr[size - 1];
 
-        // Run a loop from the previous element of last element to 0
+        /**
+         * Run a loop from the last element to 0. and put the previous element of the
+         * array in the position of current element
+         */
         for (int i = size - 1; i > 0; i--) {
             arr[i] = arr[i - 1];
         }
