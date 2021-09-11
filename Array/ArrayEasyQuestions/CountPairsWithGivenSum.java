@@ -1,4 +1,5 @@
 /**
+ * Count Pairs with given sum.
  * Given an array of N integers, and an integer K, find the number of pairs of 
  * elements in the array whose sum is equal to K.
  * 
@@ -55,8 +56,10 @@ public class CountPairsWithGivenSum {
 
         for (int i = 0; i < arr.length; i++) {
 
-            // If the key is matched then increment count. otherwise, put the value in
-            // Hashmap.
+            /**
+             * If the key is matched then increment count. otherwise, put the value in
+             * Hashmap.
+             */
             if (map.containsKey(sum - arr[i])) {
                 count += map.get(sum - arr[i]);
                 System.out.print("(" + (sum - arr[i]) + "," + arr[i] + ")");
