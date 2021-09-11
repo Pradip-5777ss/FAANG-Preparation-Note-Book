@@ -17,7 +17,7 @@
  * Explanation: 2 and 3 occur more than once in the given array.
  */
 
-package Array.ArrayIntermediateQuestions;
+package Array.ArrayEasyQuestions;
 
 import java.util.ArrayList;
 import java.util.Scanner;
