@@ -1,5 +1,19 @@
 /**
- * Write a program to find the starting point of the loop in Linked list.
+ * Find first node of loop in a linked list.
+ * Write a program to find the starting point of the loop in Linked list. Given a linked list of N nodes. 
+ * The task is to check if the linked list has a loop then find the first node of loop in the Linked List.
+ * 
+ * Example 1:
+ *      Input:  N = 3
+ *              value[] = {1,3,4}
+ *              x = 2
+ *      Output: True
+ * Explanation: In this example N = 3. The linked list with nodes N = 3 is given. Then value
+ * of x=2 is given which means last node is connected with xth node of linked list. 
+ * Therefore, the first node of the list is 3.
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -11,7 +25,8 @@ public class FindFirstNodeOfLoopInLL {
     static Node tempNode;
     static Node tailNode;
 
-    public class Node {
+    // Node class for creating Linked List
+    class Node {
 
         int data;
         Node nextNode;
@@ -24,7 +39,7 @@ public class FindFirstNodeOfLoopInLL {
 
     public static void main(String[] args) {
 
-        // Scanner class to take user input
+        // Create Scanner class object to take user input
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the linked list
@@ -48,7 +63,7 @@ public class FindFirstNodeOfLoopInLL {
 
         sc.close();
 
-        // Call the method for make the loop
+        // Method call for make the loop in the linked list
         makeLoop(headNode, tailNode, pos);
 
         // Method call to find the first node of loop in linked list
@@ -61,21 +76,39 @@ public class FindFirstNodeOfLoopInLL {
         }
     }
 
-    // Method to add new elements in the list
+    // Method to create new node in the list
     private static void createNewNode(Node node) {
 
+        // First time when the list is empty then create the headNode
         if (headNode == null) {
             headNode = node;
             return;
         }
 
+        // Make the headNode as tempNode
         tempNode = headNode;
 
+        // Add other nodes in the list
         while (tempNode.nextNode != null) {
             tempNode = tempNode.nextNode;
         }
         tempNode.nextNode = node;
         tailNode = tempNode.nextNode;
+    }
+
+    // Method to create the loop in the linked list
+    private static void makeLoop(Node head, Node tail, int pos) {
+
+        if (pos == 0) {
+            return;
+        }
+
+        tempNode = head;
+
+        for (int i = 1; i < pos; i++) {
+            tempNode = tempNode.nextNode;
+        }
+        tail.nextNode = tempNode;
     }
 
     // Method to find the first node of loop in a linked list
@@ -121,19 +154,5 @@ public class FindFirstNodeOfLoopInLL {
             fast = fast.nextNode;
         }
         return slow;
-    }
-
-    // Method to create the loop in the linked list
-    private static void makeLoop(Node head, Node tail, int pos) {
-        if (pos == 0) {
-            return;
-        }
-
-        tempNode = head;
-
-        for (int i = 1; i < pos; i++) {
-            tempNode = tempNode.nextNode;
-        }
-        tail.nextNode = tempNode;
     }
 }
