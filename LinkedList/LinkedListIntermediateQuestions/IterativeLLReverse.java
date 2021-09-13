@@ -1,5 +1,13 @@
 /**
+ * Reverse Linked List Iteratively.
  * Write a program to reverse a linked list iteratively.
+ * 
+ * Example:
+ *      Input : 1->2->3->4->NULL
+ *      Output : 4->3->2->1->NULL
+ * 
+ * Time Complexity : O(n)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -10,6 +18,7 @@ public class IterativeLLReverse {
     static Node headNode;
     static Node tempNode;
 
+    // Node class for creating Linked List
     class Node {
         int data;
         Node nextNode;
@@ -22,7 +31,7 @@ public class IterativeLLReverse {
 
     public static void main(String[] args) {
 
-        // Create Scanner class to take user input
+        // Create Scanner class object to take user input
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the linked list
@@ -43,31 +52,33 @@ public class IterativeLLReverse {
         sc.close();
 
         // Method call to Print the general list
-        System.out.println("The general list is");
+        System.out.print("The general list is : ");
         printList();
 
         // Method call to reverse the list
         reverseNode();
 
-        //  Method call to print the reverse list
-        System.out.println("The reverse list is");
+        // Method call to print the reverse list
+        System.out.print("The reverse list is : ");
         printList();
     }
 
-    // Method to add the elements in the link list
+    // Method to create add the new elements in the Linked List
     private static void createNewNode(Node node) {
 
+        // First time when the List is empty then create the headNode
         if (headNode == null) {
             headNode = node;
             return;
         }
 
+        // Make the headNode as tempNode
         tempNode = headNode;
 
+        // Add other nodes in the list
         while (tempNode.nextNode != null) {
             tempNode = tempNode.nextNode;
         }
-
         tempNode.nextNode = node;
     }
 
@@ -84,7 +95,7 @@ public class IterativeLLReverse {
             curr = next;
         }
 
-        //  At last prev points to the head node
+        // At last prev points to the head node
         headNode = prev;
     }
 
@@ -93,9 +104,9 @@ public class IterativeLLReverse {
         tempNode = headNode;
 
         while (tempNode != null) {
-            System.out.print(tempNode.data + " ");
+            System.out.print(tempNode.data + "->");
             tempNode = tempNode.nextNode;
         }
-        System.out.println();
+        System.out.println("null");
     }
 }
