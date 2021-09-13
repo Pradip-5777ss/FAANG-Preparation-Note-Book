@@ -25,6 +25,7 @@ public class DeleteLoopInLL {
     static Node tempNode;
     static Node tailNode;
 
+    // Node class for creating Linked List
     class Node {
 
         int data;
