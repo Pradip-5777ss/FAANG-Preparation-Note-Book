@@ -22,7 +22,7 @@ public class RearrangeArrayAlternatively {
 		Scanner sc = new Scanner(System.in);
 
 		// Ask user to enter the size of the array
-		System.out.println("emter the size of the array : ");
+		System.out.print("emter the size of the array : ");
 		int size = sc.nextInt();
 
 		// Initialize the size into the array
@@ -37,14 +37,14 @@ public class RearrangeArrayAlternatively {
 		sc.close();
 
 		// Print the given array
-		System.out.println("given array is : ");
+		System.out.print("The given array is : ");
 		printArray(arr);
 
 		// Method call to rearrange the array alternatively
 		rearrange(arr, size);
 
 		// Print the rearrange array
-		System.out.println("the rearrange array is : ");
+		System.out.print("The rearrange array is : ");
 		printArray(arr);
 	}
 
@@ -75,8 +75,9 @@ public class RearrangeArrayAlternatively {
 		}
 
 		// i has index of leftmost negative element
-		if (i == 0 || i == size)
+		if (i == 0 || i == size) {
 			return;
+		}
 
 		/**
 		 * start with first positive element at index 0
@@ -96,7 +97,7 @@ public class RearrangeArrayAlternatively {
 	// Method to print the array
 	static void printArray(int arr[]) {
 		for (int i : arr) {
-			System.out.println(i + " ");
+			System.out.print(i + " ");
 		}
 		System.out.println();
 	}
@@ -107,5 +108,4 @@ public class RearrangeArrayAlternatively {
 		arr[index1] = arr[index2];
 		arr[index2] = c;
 	}
-
 }
