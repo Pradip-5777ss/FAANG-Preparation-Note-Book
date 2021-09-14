@@ -1,13 +1,16 @@
 /**
  * Delete nodes which having greater value on right side.
+ * Given a singly linked list, remove all the nodes which have a greater value on its following nodes.
  * 
  * Example:
- * Input:
- *      LinkedList = 12->15->10->11->5->6->2->3
- * Output: 15 11 6 3
- * Explanation: Since, 12, 10, 5 and 2 are the elements which have greater 
- * elements on the following nodes. So, after deleting them, the linked list 
- * would like be 15,11, 6, 3.
+ *      Input:
+ *          LinkedList = 12->15->10->11->5->6->2->3
+ *      Output: 15 11 6 3
+ * Explanation: Since, 12, 10, 5 and 2 are the elements which have greater elements on the following nodes. 
+ * So, after deleting them, the linked list would like be 15,11, 6, 3.
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -18,7 +21,8 @@ public class DeleteNodesHavingGreaterValueOnRight {
     static Node headNode;
     static Node tempNode;
 
-    public class Node {
+    // Node class for creating linked list
+    class Node {
 
         int data;
         Node nextNode;
@@ -35,7 +39,7 @@ public class DeleteNodesHavingGreaterValueOnRight {
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the linked list
-        System.out.println("Enter the length of the linked list : ");
+        System.out.print("Enter the length of the linked list : ");
         int length = sc.nextInt();
 
         // Create object of the class
@@ -61,6 +65,25 @@ public class DeleteNodesHavingGreaterValueOnRight {
         // Method call to print the final list
         System.out.print("The final list is : ");
         printList(headNode);
+    }
+
+    // Method to create new nodes in the list
+    private static void createNewNode(Node node) {
+
+        // First time when the list is empty then create the headNode
+        if (headNode == null) {
+            headNode = node;
+            return;
+        }
+
+        // Make headNode as tempNode
+        tempNode = headNode;
+
+        // Add other nodes in the list
+        while (tempNode.nextNode != null) {
+            tempNode = tempNode.nextNode;
+        }
+        tempNode.nextNode = node;
     }
 
     // Method to delete nodes which have greater value on right
@@ -131,21 +154,5 @@ public class DeleteNodesHavingGreaterValueOnRight {
             head = head.nextNode;
         }
         System.out.println("null");
-    }
-
-    // Method to add new elements in the list
-    private static void createNewNode(Node node) {
-
-        if (headNode == null) {
-            headNode = node;
-            return;
-        }
-
-        tempNode = headNode;
-
-        while (tempNode.nextNode != null) {
-            tempNode = tempNode.nextNode;
-        }
-        tempNode.nextNode = node;
     }
 }
