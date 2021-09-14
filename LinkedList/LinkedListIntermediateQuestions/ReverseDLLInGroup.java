@@ -1,5 +1,14 @@
 /**
- * Rotate a Doubly Linked list in group of Given Size.
+ * Reverse a Doubly Linked list in group of Given Size.
+ * Given a doubly linked list containing n nodes. The problem is to reverse every group of k nodes in the list.
+ * 
+ * Example:
+ *      Input : DLL: 1<->2<->4<->5<->6<->8
+ *              k = 3
+ *      Output : 4<->2<->1<->8<->6<->5
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -10,7 +19,8 @@ public class ReverseDLLInGroup {
     static Node headNode;
     static Node tempNode;
 
-    public class Node {
+    // Node class for creating linked list
+    class Node {
 
         int data;
         Node nextNode;
@@ -29,7 +39,7 @@ public class ReverseDLLInGroup {
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the linked list
-        System.out.println("Enter the length of the linked list : ");
+        System.out.print("Enter the length of the linked list : ");
         int length = sc.nextInt();
 
         // Create object of the class
@@ -44,7 +54,7 @@ public class ReverseDLLInGroup {
         }
 
         // Ask user to enter the size of the group to reverse DLL
-        System.out.println("Enter the size of group");
+        System.out.print("Enter the size of group : ");
         int size = sc.nextInt();
 
         sc.close();
@@ -53,8 +63,28 @@ public class ReverseDLLInGroup {
         headNode = reverseInGroup(headNode, size);
 
         // Method call to print the list
-        System.out.println("After rotating the array is : ");
+        System.out.print("After rotating the array is : ");
         printList();
+    }
+
+    // Method to create new node in the list
+    private static void createNewNode(Node node) {
+
+        // First time when the list is empty then create the headNode
+        if (headNode == null) {
+            headNode = node;
+            return;
+        }
+
+        // Make headNode as tempNode
+        tempNode = headNode;
+
+        // Add other nodes in the list
+        while (tempNode.nextNode != null) {
+            tempNode = tempNode.nextNode;
+        }
+        tempNode.nextNode = node;
+        node.prevNode = tempNode;
     }
 
     // Method to reverse a DLL in group
@@ -75,27 +105,19 @@ public class ReverseDLLInGroup {
             count++;
         }
 
-        if (curr != null) {
-            head.nextNode = reverseInGroup(curr, size);
+        /**
+         * Checking if the reversed LinkedList size is equal to K or not. If it is not
+         * equal to k that means we have reversed the last set of size K and we don't
+         * need to call the recursive function
+         */
+        if (count >= size) {
+            Node rest = reverseInGroup(curr, size);
+            head.nextNode = rest;
+            if (rest != null) {
+                rest.prevNode = head;
+            }
         }
         return prev;
-    }
-
-    // Method to add new elements of the list
-    private static void createNewNode(Node node) {
-
-        if (headNode == null) {
-            headNode = node;
-            return;
-        }
-
-        tempNode = headNode;
-
-        while (tempNode.nextNode != null) {
-            tempNode = tempNode.nextNode;
-        }
-        tempNode.nextNode = node;
-        node.prevNode = tempNode;
     }
 
     // Method to print the list
