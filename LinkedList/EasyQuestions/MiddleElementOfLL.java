@@ -43,7 +43,7 @@ public class MiddleElementOfLL {
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the linked list
-        System.out.println("Enter the length of the linked list : ");
+        System.out.print("Enter the length of the linked list : ");
         int length = sc.nextInt();
 
         // Create object of the class
