@@ -15,6 +15,9 @@
  *      3rd    list      5->6
  *      4th    list      7->8
  *      The merged list will be 1->2->3->4->5->5->6->7->8.
+ * 
+ * Time Complexity : O(nK LogK)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -25,6 +28,7 @@ public class MergeKsortedLL {
     static Node headNode;
     static Node tempNode;
 
+    //Node class for creating Linked list
     class Node {
 
         int data;
