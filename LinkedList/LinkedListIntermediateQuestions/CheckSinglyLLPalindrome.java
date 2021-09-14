@@ -40,7 +40,7 @@ public class CheckSinglyLLPalindrome {
 
     public static void main(String[] args) {
 
-        // Create Scanner class to take user input
+        // Create Scanner class object to take user input
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the Linked list
