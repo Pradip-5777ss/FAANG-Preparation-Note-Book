@@ -1,5 +1,21 @@
 /**
- * Write a Program to check whether the Singly Linked list is a palindrome or not.
+ * Check if Linked List is Palindrome.
+ * Given a singly linked list of size N of integers. The task is to check if the given linked list is palindrome or not..
+ * 
+ * Example 1:
+ *      Input: N = 3
+ *             value[] = {1,2,1}
+ *      Output: 1
+ * Explanation: The given linked list is 1 2 1 , which is a palindrome and Hence, the output is 1.
+ * 
+ * Example 2:
+ *      Input: N = 4
+ *             value[] = {1,2,3,4}
+ *      Output: 0
+ * Explanation: The given linked list is 1 2 3 4 , which is not a palindrome and Hence, the output is 0.
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -9,15 +25,16 @@ public class CheckSinglyLLPalindrome {
 
     static Node headNode;
     static Node tailNode;
-    static Node temp;
+    static Node tempNode;
 
+    // Node class for creating Linked list
     class Node {
         int data;
-        Node next;
+        Node nextNode;
 
         public Node(int data) {
             this.data = data;
-            next = null;
+            nextNode = null;
         }
     }
 
@@ -27,16 +44,14 @@ public class CheckSinglyLLPalindrome {
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the Linked list
-        System.out.println("Enter the length of the linked list : ");
+        System.out.print("Enter the length of the linked list : ");
         int length = sc.nextInt();
-
-        // Ask user to enter the elements of the linked list
-        System.out.println("Enter the elements of the linked list");
 
         // Create object of the class
         CheckSinglyLLPalindrome list = new CheckSinglyLLPalindrome();
 
-        // Run a loop to take user input
+        // Ask user to enter the elements of the linked list
+        System.out.println("Enter the elements of the linked list");
         for (int i = 0; i < length; i++) {
             int val = sc.nextInt();
             Node hNode = list.new Node(val);
@@ -56,20 +71,23 @@ public class CheckSinglyLLPalindrome {
         }
     }
 
-    // Method to add elements in linked list
+    // Method to create new nodes in linked list
     private static void createNewNode(Node node) {
 
+        // First time when the list is empty then create the headNode
         if (headNode == null) {
             headNode = node;
             return;
         }
 
-        temp = headNode;
+        // Make headNode as tempNode
+        tempNode = headNode;
 
-        while (temp.next != null) {
-            temp = temp.next;
+        // Add other nodes in the list
+        while (tempNode.nextNode != null) {
+            tempNode = tempNode.nextNode;
         }
-        temp.next = node;
+        tempNode.nextNode = node;
     }
 
     // Method to check wheather the list is palindrome or not
@@ -77,12 +95,12 @@ public class CheckSinglyLLPalindrome {
 
         // Declare a variable and initialize by 0
         int size = 0;
-        temp = head;
+        tempNode = head;
 
         // Finding the number of nodes in the list
-        while (temp != null) {
+        while (tempNode != null) {
             size++;
-            temp = temp.next;
+            tempNode = tempNode.nextNode;
         }
 
         /**
@@ -94,7 +112,7 @@ public class CheckSinglyLLPalindrome {
         }
 
         // Store the address of the head in temp node
-        temp = head;
+        tempNode = head;
 
         /**
          * now, we split list into 2 halves. In case of odd number of elements, first
@@ -104,14 +122,16 @@ public class CheckSinglyLLPalindrome {
 
         // Using a pointer to get to middle element element to get second half of list
         while (mid > 0) {
-            temp = temp.next;
+            tempNode = tempNode.nextNode;
             mid--;
         }
 
-        // temp now holds address of the last element of first half
-        // Storing the element of second half separately in head2
-        Node head2 = temp.next;
-        temp.next = null;
+        /**
+         * temp now holds address of the last element of first half Storing the element
+         * of second half separately in head2
+         */
+        Node head2 = tempNode.nextNode;
+        tempNode.nextNode = null;
 
         // Reverse the second half of list
         head2 = reverse_list(head2);
@@ -124,7 +144,7 @@ public class CheckSinglyLLPalindrome {
 
         // Again reverse the second list and connect it to first half
         head2 = reverse_list(head2);
-        temp.next = head2;
+        tempNode.nextNode = head2;
 
         // returning true if the list is palindrome else false
         return res;
@@ -137,8 +157,8 @@ public class CheckSinglyLLPalindrome {
             if (head1.data != head2.data) {
                 return false;
             }
-            head1 = head1.next;
-            head2 = head2.next;
+            head1 = head1.nextNode;
+            head2 = head2.nextNode;
         }
 
         return true;
@@ -152,8 +172,8 @@ public class CheckSinglyLLPalindrome {
         Node next;
 
         while (curr != null) {
-            next = curr.next;
-            curr.next = prev;
+            next = curr.nextNode;
+            curr.nextNode = prev;
             prev = curr;
             curr = next;
         }
@@ -164,13 +184,13 @@ public class CheckSinglyLLPalindrome {
     // Method to print the linked list
     private static void printLL() {
 
-        temp = headNode;
+        tempNode = headNode;
 
-        System.out.println("The output LL is : ");
+        System.out.print("The output LL is : ");
 
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+        while (tempNode != null) {
+            System.out.print(tempNode.data + " ");
+            tempNode = tempNode.nextNode;
         }
         System.out.println();
     }
