@@ -1,5 +1,15 @@
 /**
  * Count triplets in a sorted DLL whose sum is equal to given value	“X”.
+ * Given a sorted doubly linked list of distinct nodes(no two nodes have the same data) 
+ * and a value x. Count triplets in the list that sum up to a given value x.
+ * 
+ * Example:
+ *      Input: DLL: 1<->2<->4<->5<->6<->8<->9
+ *             x = 15
+ *      Output: 5
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -10,16 +20,17 @@ public class CountTriplesInSortedDLL {
     static Node headNode;
     static Node tempNode;
 
-    public class Node {
+    // Node class for creating linked list
+    class Node {
 
         int data;
         Node nextNode;
-        Node prev;
+        Node prevNode;
 
         public Node(int data) {
             this.data = data;
             nextNode = null;
-            prev = null;
+            prevNode = null;
         }
     }
 
@@ -29,7 +40,7 @@ public class CountTriplesInSortedDLL {
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the linked list
-        System.out.println("Enter the length of the linked list : ");
+        System.out.print("Enter the length of the linked list : ");
         int length = sc.nextInt();
 
         // Create object of the class
@@ -44,13 +55,34 @@ public class CountTriplesInSortedDLL {
         }
 
         // Ask user to enter the value to find triplets
-        System.out.println("Enter the value to find triplets : ");
+        System.out.print("Enter the value to find triplets : ");
         int x = sc.nextInt();
 
         sc.close();
 
         // Method call to count the triplets of the given sum
         System.out.println("There are " + countTriplets(headNode, x) + " triplets in this doubly Linked list");
+    }
+
+    // Method to create new nodes in the list
+    private static void createNewNode(Node node) {
+
+        // First time when the list is empty then create headNode
+        if (headNode == null) {
+            headNode = node;
+            headNode.prevNode = null;
+            return;
+        }
+
+        // Make headNode as tempNode
+        tempNode = headNode;
+
+        // Add other nodes in the list
+        while (tempNode.nextNode != null) {
+            tempNode = tempNode.nextNode;
+        }
+        tempNode.nextNode = node;
+        node.prevNode = tempNode;
     }
 
     /**
@@ -113,7 +145,7 @@ public class CountTriplesInSortedDLL {
                 first = first.nextNode;
 
                 // Move second in backward direction
-                second = second.prev;
+                second = second.prevNode;
             }
 
             /**
@@ -126,27 +158,9 @@ public class CountTriplesInSortedDLL {
 
             // else move the second in backward direction
             else {
-                second = second.prev;
+                second = second.prevNode;
             }
         }
         return count;
-    }
-
-    // Method to add new elements in the list
-    private static void createNewNode(Node node) {
-
-        if (headNode == null) {
-            headNode = node;
-            headNode.prev = null;
-            return;
-        }
-
-        tempNode = headNode;
-
-        while (tempNode.nextNode != null) {
-            tempNode = tempNode.nextNode;
-        }
-        tempNode.nextNode = node;
-        node.prev = tempNode;
     }
 }
