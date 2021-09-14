@@ -12,6 +12,9 @@
  * Example 2:
  *      Input: LinkedList: 2->4->6->7->5->1
  *      Output: 0
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package LinkedList.EasyQuestions;
 
