@@ -1,5 +1,18 @@
 /**
  * Given a linked list of 0s, 1s and 2s, sort it.
+ * Given a linked list of N nodes where nodes can contain values 0s, 1s, and 2s only. 
+ * The task is to segregate 0s, 1s, and 2s linked list such that all zeros segregate
+ *  to head side, 2s at the end of the linked list, and 1s in the mid of 0s and 2s.
+ * 
+ * Example:
+ *      Input: N = 8
+ *             value[] = {1,2,2,1,2,0,2,2}
+ *      Output: 0 1 1 2 2 2 2 2
+ * Explanation: All the 0s are segregated to the left end of the linked list, 2s to 
+ * the right end of the list, and 1s in between.
+ * 
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  */
 package LinkedList.LinkedListIntermediateQuestions;
 
@@ -10,7 +23,8 @@ public class SegregateZeroOneAndTwo {
     static Node headNode;
     static Node tempNode;
 
-    public class Node {
+    // Node class for creating linked list
+    class Node {
 
         int data;
         Node nextNode;
@@ -21,6 +35,7 @@ public class SegregateZeroOneAndTwo {
         }
     }
 
+    // Create object of the class
     static SegregateZeroOneAndTwo sZeroOneAndTwo = new SegregateZeroOneAndTwo();
 
     public static void main(String[] args) {
@@ -29,11 +44,11 @@ public class SegregateZeroOneAndTwo {
         Scanner sc = new Scanner(System.in);
 
         // Ask user to enter the length of the linked list
-        System.out.println("Enter the length of the linked list");
+        System.out.print("Enter the length of the linked list : ");
         int length = sc.nextInt();
 
         // Ask user to enter the elements of the list
-        System.out.println("Enter the elements of the list : ");
+        System.out.println("Enter the elements of the list");
         for (int i = 0; i < length; i++) {
             int val = sc.nextInt();
             Node hNode = sZeroOneAndTwo.new Node(val);
@@ -45,23 +60,27 @@ public class SegregateZeroOneAndTwo {
         headNode = segregate(headNode);
 
         // Method call to print the linked list
-        System.out.println("After sorting the list is : ");
+        System.out.print("After sorting the list is : ");
         printList(headNode);
     }
 
-    // Method to print the list
-    private static void printList(Node head) {
+    // Method to create new node in the list
+    private static void createNewNode(Node node) {
 
-        if (head == null) {
+        // First time when the list is empty then create the headNode
+        if (headNode == null) {
+            headNode = node;
             return;
         }
-        tempNode = head;
 
-        while (tempNode != null) {
-            System.out.print(tempNode.data + "->");
+        // Make the headNode as tempNode
+        tempNode = headNode;
+
+        // Add other nodes in the list
+        while (tempNode.nextNode != null) {
             tempNode = tempNode.nextNode;
         }
-        System.out.println("null");
+        tempNode.nextNode = node;
     }
 
     // Method to sort a linked list of 0s, 1s and 2s
@@ -110,23 +129,20 @@ public class SegregateZeroOneAndTwo {
         // Updataing the head of the list
         head = zeroD.nextNode;
         return head;
-
     }
 
-    // Method to add new elements in the list
-    private static void createNewNode(Node node) {
+    // Method to print the list
+    private static void printList(Node head) {
 
-        if (headNode == null) {
-            headNode = node;
+        if (head == null) {
             return;
         }
+        tempNode = head;
 
-        tempNode = headNode;
-
-        while (tempNode.nextNode != null) {
+        while (tempNode != null) {
+            System.out.print(tempNode.data + "->");
             tempNode = tempNode.nextNode;
         }
-        tempNode.nextNode = node;
+        System.out.println("null");
     }
-
 }
