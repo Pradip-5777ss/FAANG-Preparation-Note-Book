@@ -1,5 +1,5 @@
 /**
- * Write a program to print the elements in Preorder traversal on both recursive & iteratively.
+ * Write a program to print the elements in Postorder traversal on both recursive & iteratively.
  */
 package BinaryTree.EasyQuestions;
 
@@ -8,7 +8,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class PreorderTreeTraversalRecusiveAndIterative {
+public class PostorderTreeTraversalRecursiveAndIterative {
 
     // Node class for creating the node of the tree
     public class Node {
@@ -23,7 +23,8 @@ public class PreorderTreeTraversalRecusiveAndIterative {
         }
     }
 
-    static PreorderTreeTraversalRecusiveAndIterative pTraversalRecusiveAndIterative = new PreorderTreeTraversalRecusiveAndIterative();
+    // Create the object of the class
+    static PostorderTreeTraversalRecursiveAndIterative postIterativeRecursive = new PostorderTreeTraversalRecursiveAndIterative();
 
     public static void main(String[] args) {
 
@@ -40,18 +41,20 @@ public class PreorderTreeTraversalRecusiveAndIterative {
         sc.close();
 
         // Print the tree in recursive order
-        System.out.print("The recursive preorder traversal is : ");
-        recursivePreorder(root);
+        System.out.print("The recursive postorder traversal is : ");
+        recursivePostorder(root);
 
         System.out.println();
 
         // Print the tree in iterative order
-        System.out.print("The iterative preorder traversal is : ");
-        iterativePreorder(root);
-
+        System.out.print("The iterative postorder traversal is : ");
+        iterativePostorder(root);
     }
 
-    private static void iterativePreorder(Node root) {
+    // Method to print the tree in iterative order
+    private static void iterativePostorder(Node root) {
+
+        // return if the tree is empty
         if (root == null) {
             return;
         }
@@ -60,43 +63,48 @@ public class PreorderTreeTraversalRecusiveAndIterative {
         Stack<Node> stack = new Stack<>();
         stack.push(root);
 
-        // start from the root node (set current node to the root node)
-        Node curr = root;
+        // create another stack to store postorder traversal
+        Stack<Integer> out = new Stack<>();
 
         // loop till stack is empty
         while (!stack.empty()) {
-            /**
-             * if the current node exists, print it and push its right child to the stack
-             * before moving to its left child
-             */
-            if (curr != null) {
-                System.out.print(curr.data + " ");
 
-                if (curr.right != null) {
-                    stack.push(curr.right);
-                }
+            // pop a node from the stack and push the data into the output stack
+            Node curr = stack.pop();
+            out.push(curr.data);
 
-                curr = curr.left;
+            // push the left and right child of the popped node into the stack
+            if (curr.left != null) {
+                stack.push(curr.left);
             }
-            /**
-             * if the current node is null, pop a node from the stack set the current node
-             * to the popped node
-             */
-            else {
-                curr = stack.pop();
+
+            if (curr.right != null) {
+                stack.push(curr.right);
             }
+        }
+
+        // print postorder traversal
+        while (!out.empty()) {
+            System.out.print(out.pop() + " ");
         }
     }
 
-    private static void recursivePreorder(Node root) {
+    // Method to print the tree in recursive order
+    private static void recursivePostorder(Node root) {
+
         // Base case
         if (root == null) {
             return;
         }
 
+        // Traverse the left subTree
+        recursivePostorder(root.left);
+
+        // Traverse the right subtree
+        recursivePostorder(root.right);
+
+        // Print the root of the tree
         System.out.print(root.data + " ");
-        recursivePreorder(root.left);
-        recursivePreorder(root.right);
     }
 
     // Method to build the tree
@@ -111,7 +119,7 @@ public class PreorderTreeTraversalRecusiveAndIterative {
         String ip[] = str.split(" ");
 
         // Create the root of the tree
-        Node root = pTraversalRecusiveAndIterative.new Node(Integer.parseInt(ip[0]));
+        Node root = postIterativeRecursive.new Node(Integer.parseInt(ip[0]));
 
         // Declare a queue and push the root to the queue
         Queue<Node> queue = new LinkedList<>();
@@ -131,7 +139,7 @@ public class PreorderTreeTraversalRecusiveAndIterative {
             // If the left child is not null
             if (!currval.equals("N")) {
                 // Create the left child for the current node
-                currNode.left = pTraversalRecusiveAndIterative.new Node(Integer.parseInt(currval));
+                currNode.left = postIterativeRecursive.new Node(Integer.parseInt(currval));
                 // Push it into the queue
                 queue.add(currNode.left);
             }
@@ -147,7 +155,7 @@ public class PreorderTreeTraversalRecusiveAndIterative {
             if (!currval.equals("N")) {
 
                 // Create the right child for the current node
-                currNode.right = pTraversalRecusiveAndIterative.new Node(Integer.parseInt(currval));
+                currNode.right = postIterativeRecursive.new Node(Integer.parseInt(currval));
                 // Push it into the queue
                 queue.add(currNode.right);
             }
