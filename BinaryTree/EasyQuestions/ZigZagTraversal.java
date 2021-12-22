@@ -132,7 +132,12 @@ public class ZigZagTraversal {
 
             /**
              * If the "currentLevel" stack is empty then make the boolean value false and
+<<<<<<< HEAD
              * create a stack "temp" to swap the elements of the stack.
+=======
+             * create a stack "temp" to swap the elements of the stack from "nextLevel"
+             * stack to "currLevel" stack
+>>>>>>> testing
              */
             if (currLevel.isEmpty()) {
                 leftToRight = !leftToRight;
