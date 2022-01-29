@@ -146,18 +146,18 @@ public class LevelOrderTraversal {
 
         while (!q.isEmpty()) {
             // Storing the front element of the queue in List and removing it from queue
-            root = q.peek();
-            res.add(root.data);
+            Node currRoot = q.peek();
+            res.add(currRoot.data);
             q.poll();
 
             // Storing the left child of the parent node in queue
-            if (root.left != null) {
-                q.add(root.left);
+            if (currRoot.left != null) {
+                q.add(currRoot.left);
             }
 
             // Storing the right child of the parent node in queue
-            if (root.right != null) {
-                q.add(root.right);
+            if (currRoot.right != null) {
+                q.add(currRoot.right);
             }
         }
         // Return the list
