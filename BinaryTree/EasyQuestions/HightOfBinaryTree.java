@@ -71,7 +71,7 @@ public class HightOfBinaryTree {
 
         /**
          * else we call the recursive function, height for left and right subtree and
-         * choose their maximum. we also add 1 to the resultwhich indicates height of
+         * choose their maximum. we also add 1 to the result which indicates height of
          * root of the tree.
          */
         else {
