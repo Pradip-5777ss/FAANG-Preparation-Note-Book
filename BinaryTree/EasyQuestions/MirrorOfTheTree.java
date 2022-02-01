@@ -14,8 +14,8 @@
  *      5
  *     / \
  *    6   3
- *   / \
- *  4   2
+ *       / \
+ *      4   2
  * 
  * Time Complexity : O(N)
  * Space Complexity : O(Height of the tree)
@@ -74,12 +74,13 @@ public class MirrorOfTheTree {
         }
 
         inorderTraversal(root.left);
-        System.out.println(root.data);
+        System.out.print(root.data + " ");
         inorderTraversal(root.right);
     }
 
     // Method to Mirrorify the tree
     private static Node MirrorTree(Node root) {
+        
         if (root == null) {
             return null;
         }
