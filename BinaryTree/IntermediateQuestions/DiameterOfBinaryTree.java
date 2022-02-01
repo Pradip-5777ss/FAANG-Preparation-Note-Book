@@ -45,6 +45,7 @@ public class DiameterOfBinaryTree {
 
     // Create object of the class
     static DiameterOfBinaryTree diameter = new DiameterOfBinaryTree();
+    static int dia = 0;
 
     public static void main(String[] args) {
 
@@ -70,21 +71,35 @@ public class DiameterOfBinaryTree {
     // Method to find the diameter of the tree
     private static int FindDiameter(Node root) {
 
+        // Method call to find the height of the binary tree
+        height(root);
+
+        // Return the diameter of the tree
+        return dia;
+    }
+
+    // Method to find the height of the tree
+    private static int height(Node root) {
+
         // Base case
         if (root == null) {
             return 0;
         }
 
-        // Find the sum of the left & right subtree
-        int sum = height(root.left) + height(root.right);
+        /**
+         * Calling the height function recursively to find the height of left and right
+         * subtree
+         */
+        int lh = height(root.left);
+        int rh = height(root.right);
 
-        // Recursive call the method to find the diameter of the tree
-        return Math.max(sum + 1, Math.max(FindDiameter(root.left), FindDiameter(root.right)));
-    }
+        // Storing the maximum possible value of lh+rh+1 in diameter
+        if (lh + rh + 1 > dia) {
+            dia = lh + rh + 1;
+        }
 
-    // Method to find the height of the tree
-    private static int height(Node root) {
-        return (root == null) ? 0 : 1 + Math.max(height(root.left), height(root.right));
+        // Return the height of subtree
+        return 1 + Math.max(lh, rh);
     }
 
     // Method to build the tree
