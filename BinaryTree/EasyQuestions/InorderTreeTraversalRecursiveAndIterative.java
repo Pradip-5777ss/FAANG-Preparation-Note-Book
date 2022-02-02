@@ -67,7 +67,8 @@ public class InorderTreeTraversalRecursiveAndIterative {
          * If the tree is not null then push the element into the stack & increment the
          * root of the tree to the left element.
          * 
-         * else, we pop the top element of the tree from the stack and print the data
+         * else, we pop the top element of the tree from the stack and print the data &
+         * increment the current node to the right side
          */
         while (!stack.empty() || curr != null) {
             if (curr != null) {
