@@ -1,7 +1,7 @@
 /**
  * Minimum element in BST.
  * 
- * Given a Binary Search Tree. The task is to find the minimum element in this given BST.
+ * Given a Binary Search Tree. The task is to find the minimum and maximum element in this given BST.
  * 
  * Example 1:
  *  Input:
@@ -13,6 +13,7 @@
  *       /
  *      1
  *  Output: 1
+ *          7
  * 
  * Example 2:
  *  Input:
@@ -22,6 +23,7 @@
  *                 \
  *                  11
  *  Output: 9
+ *          11
  * 
  * Time Complexity: O(Height of the BST)
  * Auxiliary Space: O(Height of the BST).
@@ -79,6 +81,29 @@ public class MinimumElementInBST {
 
         // Print the minimum value
         System.out.println("The minimum value of the BST is : " + res);
+
+        // Call the method to find the maximum value of the binary tree
+        int ans = maxValue(root);
+
+        // Print the maximum value
+        System.out.println("The maximum value of the BST is : " + ans);
+    }
+
+    // Method to find the maximum value of the tree
+    private static int maxValue(Node root) {
+
+        // Base case
+        if (root == null) {
+            return -1;
+        }
+
+        // Run a loop until the right child of the tree is not null
+        while (root.right != null) {
+            root = root.right;
+        }
+
+        // Return the maximum node data
+        return root.data;
     }
 
     // Method to find the minimum value of the tree
@@ -94,7 +119,7 @@ public class MinimumElementInBST {
             root = root.left;
         }
 
-        // Return the minimum root element data
+        // Return the minimum node data
         return root.data;
     }
 
