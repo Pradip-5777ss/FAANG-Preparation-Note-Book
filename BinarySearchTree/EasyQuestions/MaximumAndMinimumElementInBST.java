@@ -32,7 +32,7 @@ package BinarySearchTree.EasyQuestions;
 
 import java.util.Scanner;
 
-public class MinimumElementInBST {
+public class MaximumAndMinimumElementInBST {
 
     // Class for creating nodes of the tree
     class Node {
@@ -48,7 +48,7 @@ public class MinimumElementInBST {
     }
 
     // Create object of the class
-    static MinimumElementInBST minElement = new MinimumElementInBST();
+    static MaximumAndMinimumElementInBST minElement = new MaximumAndMinimumElementInBST();
 
     public static void main(String[] args) {
 
