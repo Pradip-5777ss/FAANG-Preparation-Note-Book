@@ -26,7 +26,7 @@ package LeetcodeTopInterviewQuestions.Array.EasyQuestions;
 
 import java.util.Scanner;
 
-public class MaximumSubarray {
+public class Q53_MaximumSubarray {
 
     public static void main(String[] args) {
 

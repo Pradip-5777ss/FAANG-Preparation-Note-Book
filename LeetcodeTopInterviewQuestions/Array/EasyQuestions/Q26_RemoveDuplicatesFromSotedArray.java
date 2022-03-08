@@ -31,7 +31,7 @@ package LeetcodeTopInterviewQuestions.Array.EasyQuestions;
 
 import java.util.Scanner;
 
-public class RemoveDuplicatesFromSotedArray {
+public class Q26_RemoveDuplicatesFromSotedArray {
 
     public static void main(String[] args) {
 
