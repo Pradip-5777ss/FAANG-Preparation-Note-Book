@@ -18,49 +18,49 @@ package Love_Babbar_DSA_Sheet.Array.Easy_Questions;
 import java.util.Scanner;
 
 public class Q1_ReverseTheArray {
-    
+
     public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-		System.out.print("Enter the size of the array : ");
-		int size = sc.nextInt();
+        System.out.print("Enter the size of the array : ");
+        int size = sc.nextInt();
 
-		int arr[] = new int[size];
+        int arr[] = new int[size];
 
-		System.out.println("Enter the array elements : ");
-		for (int i = 0; i < size; i++) {
-			arr[i] = sc.nextInt();
-		}
-		sc.close();
+        System.out.println("Enter the array elements : ");
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+        sc.close();
 
-		reverseArr(arr);
-		printArr(arr);
-	}
+        reverseArr(arr);
+        printArr(arr);
+    }
 
-	//	Method to print the array
-	private static void printArr(int[] arr) {
+    // Method to print the array
+    private static void printArr(int[] arr) {
 
-		System.out.print("The output array is : ");
-		for (int i : arr) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-	}
+        System.out.print("The output array is : ");
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
 
-	//	Method to reverse the array
-	private static void reverseArr(int[] arr) {
-		
-		// Declare two pointers
-		int start = 0, end = arr.length - 1;
+    // Method to reverse the array
+    private static void reverseArr(int[] arr) {
 
-		// swap the array
-		while (start < end) {
-			int temp = arr[start];
-			arr[start] = arr[end];
-			arr[end] = temp;
-			start++;
-			end--;
-		}
-	}
+        // Declare two pointers
+        int start = 0, end = arr.length - 1;
+
+        // swap the array
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
 }
