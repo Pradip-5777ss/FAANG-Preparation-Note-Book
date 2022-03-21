@@ -40,6 +40,8 @@ public class Q2_FindMinAndMaxElementInAnArray {
             arr[i] = sc.nextInt();
         }
 
+        sc.close();
+
         // Method call to find the min and max of the array
         getMinMax(arr);
     }
