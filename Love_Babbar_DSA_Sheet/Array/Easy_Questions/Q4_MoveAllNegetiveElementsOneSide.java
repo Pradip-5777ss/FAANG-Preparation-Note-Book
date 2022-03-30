@@ -1,10 +1,12 @@
-/*
- * 	Move all negative numbers to beginning and positive to end with constant extra space.
+/**
+ * @author Pradip Sahoo
+ * Created on 25/03/2022
+ * -------------------------------------------------
+ * Move all negative numbers to beginning and positive to end with constant extra space.
+ * An array contains both positive and negative numbers in random order. Rearrange the array elements 
+ * so that all negative numbers appear before all positive numbers.
  * 
- * An array contains both positive and negative numbers in random order. Rearrange the array 
- * elements so that all negative numbers appear before all positive numbers.
- * 
- * Examples : 
+ * Example : 
  * 	Input: -12, 11, -13, -5, 6, -7, 5, -3, -6
  * 	Output: -12 -13 -5 -7 -3 -6 11 6 5
  * 
@@ -41,8 +43,16 @@ public class Q4_MoveAllNegetiveElementsOneSide {
 
 	// method to rearrange the array elements
 	static void rearrange(int arr[], int size) {
-		int i, j = 0, temp;
-		for (i = 0; i < size; i++) {
+
+		int j = 0, temp;
+
+		// Traverse the array
+		for (int i = 0; i < size; i++) {
+
+			/**
+			 * If the ith element of the array is less than 0 and if the i & j value is not
+			 * same then swap the values. and increment the j.
+			 */
 			if (arr[i] < 0) {
 				if (i != j) {
 					temp = arr[i];
