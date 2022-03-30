@@ -1,4 +1,7 @@
 /**
+ * @author Pradip Sahoo
+ * Created on 22/03/2022
+ * -------------------------------
  * Sort an array of 0s, 1s and 2s.
  * Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order.
  * 
@@ -14,7 +17,7 @@
  *      N = 3
  *      arr[] = {0 1 0}
  *  Output: 0 0 1
- * Explanation: 0s 1s and 2s are segregated into ascending order.
+ *  Explanation: 0s 1s and 2s are segregated into ascending order.
  * 
  * Time Complexity: O(N)
  * Space Complexity: O(1)
@@ -44,7 +47,7 @@ public class Q3_SortAnArrayOf012WithoutUsingSortingAlgo {
         System.out.print("After sorting the array is : ");
         printArr(arr);
     }
-    
+
     // Method to sort the array
     private static void sortArrOf012(int[] arr) {
         /**
