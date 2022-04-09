@@ -22,6 +22,9 @@
  * Example 3:
  *  Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
  *  Output: [8,9,9,9,0,0,0,1]
+ * 
+ * Time Complexity : O(max(m,n))
+ * Space Complexity : O(max(m,n))
  */
 package Leetcode_Questions.Medium_Questions;
 

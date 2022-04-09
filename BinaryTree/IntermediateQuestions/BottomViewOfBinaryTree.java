@@ -3,11 +3,11 @@ package BinaryTree.IntermediateQuestions;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 
 public class BottomViewOfBinaryTree {
 
@@ -26,22 +26,31 @@ public class BottomViewOfBinaryTree {
         }
     }
 
+    // Create object of the class
     static BottomViewOfBinaryTree bottomView = new BottomViewOfBinaryTree();
 
     public static void main(String[] args) {
 
+        // Create scanner class object to take user input
         Scanner sc = new Scanner(System.in);
 
+        // Ask user to enter the elements of the tree
         System.out.println("Enter the elements of the tree : ");
         String str = sc.nextLine();
 
+        sc.close();
+
+        // Call the method to build the tree
         Node root = buildTree(str);
 
+        // Call the method to print the bottom view of the tree
         bottomTreeView(root);
     }
 
+    // Method to print the bottom view of the tree
     private static void bottomTreeView(Node root) {
 
+        // Base case
         if (root == null) {
             return;
         }
@@ -51,11 +60,8 @@ public class BottomViewOfBinaryTree {
         Queue<Node> queue = new LinkedList<>();
         Map<Integer, Integer> bottomViewMap = new TreeMap<>();
 
-
         root.steps = step;
         queue.add(root);
-
-        System.out.println("The bottom view of the tree is : ");
 
         while (!queue.isEmpty()) {
 
@@ -75,42 +81,16 @@ public class BottomViewOfBinaryTree {
                 temp.right.steps = step + 1;
                 queue.add(temp.right);
             }
-
-            Set<Entry<Integer, Integer>> set = bottomViewMap.entrySet();
-
-            Iterator<Entry<Integer, Integer>> iterator = set.iterator();
-
-            while (iterator.hasNext()) {
-                Map.Entry<Integer, Integer> val = iterator.next();
-                System.out.println(val.getValue());
-            }
         }
-        // root.steps = stepsValue;
-        // queue.add(root);
 
-        // while (!queue.isEmpty()) {
+        Set<Entry<Integer, Integer>> set = bottomViewMap.entrySet();
 
-        // Node temp =queue.remove();
+        Iterator<Entry<Integer, Integer>> iterator = set.iterator();
 
-        // stepsValue = temp.steps;
-        // nodeValue = temp.data;
-
-        // bottomViewMap.put(stepsValue, nodeValue);
-
-        // if (temp.left != null) {
-        // temp.left.steps = stepsValue--;
-        // queue.add(temp.left);
-        // }
-
-        // if (temp.right != null) {
-        // temp.right.steps = stepsValue++;
-        // queue.add(temp.right);
-        // }
-        // }
-
-        // for(Entry<Integer, Integer> entry : bottomViewMap.entrySet()) {
-        // System.out.println(entry.getValue() + " ");
-        // }
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, Integer> val = iterator.next();
+            System.out.println(val.getValue());
+        }
     }
 
     private static Node buildTree(String str) {
