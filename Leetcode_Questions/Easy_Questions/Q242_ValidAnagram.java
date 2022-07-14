@@ -35,6 +35,8 @@ public class Q242_ValidAnagram {
         System.out.println("Enter the second string : ");
         String str2 = sc.nextLine();
 
+        sc.close();
+        
         boolean result = isAnagram(str1, str2);
 
         if (result) {
