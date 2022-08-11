@@ -49,6 +49,8 @@ public class Q01_DifferenceBetweenTwoString {
      */
     private static char findDifference(String str_1, String str_2) {
         char newText = 0;
+
+        // Perform Bitwise XOR operation with every character of the string
         for (char itr1 : str_1.toCharArray()) {
             newText ^= itr1;
         }
