@@ -24,7 +24,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class InorderTreeTraversalRecursiveAndIterative {
+public class Q05_InorderTreeTraversalRecursiveAndIterative {
 
     // Node class for creating the node of the tree
     public class Node {
@@ -40,7 +40,7 @@ public class InorderTreeTraversalRecursiveAndIterative {
     }
 
     // Create object of the class
-    static InorderTreeTraversalRecursiveAndIterative recursiveAndIterative = new InorderTreeTraversalRecursiveAndIterative();
+    static Q05_InorderTreeTraversalRecursiveAndIterative recursiveAndIterative = new Q05_InorderTreeTraversalRecursiveAndIterative();
 
     public static void main(String[] args) {
 
