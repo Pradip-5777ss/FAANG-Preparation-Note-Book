@@ -71,6 +71,7 @@ public class Q03_RemoveDuplicatesFromUnsortedLL {
         printList();
 
         // Method call to remove the duplicates from an unsorted linked list
+        System.out.print("The duplicate element is : ");
         headNode = removeDuplicates(headNode);
 
         // Print the new list after delete the duplicate elements
@@ -122,7 +123,7 @@ public class Q03_RemoveDuplicatesFromUnsortedLL {
              */
             if (hs.contains(currVal)) {
                 prev.nextNode = current.nextNode;
-                System.out.println("The duplicate element is : " + currVal);
+                System.out.println(currVal + " ");
 
                 // deleting current node which contains duplicates.
                 current = null;
