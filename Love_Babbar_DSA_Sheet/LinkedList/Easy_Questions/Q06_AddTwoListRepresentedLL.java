@@ -108,57 +108,54 @@ public class Q06_AddTwoListRepresentedLL {
     }
 
     // Method to add two list
-    private static Node addTwoList(Node first, Node second) {
+    private static Node addTwoList(Node firstList, Node secondList) {
 
         // reversing both lists to simplify addition.
-        first = reverse(first);
-        second = reverse(second);
+        firstList = reverse(firstList);
+        secondList = reverse(secondList);
 
-        Node sum = null;
+        // Declare an dummy node to store the answer
+        Node ans = null;
+
+        // Initially carry is 0
         int carry = 0;
 
         // using a loop till both lists and carry gets exhausted.
-        while (first != null || second != null || carry > 0) {
+        while (firstList != null || secondList != null || carry > 0) {
+
             // using a variable to store sum of two digits along with carry.
-            int newVal = carry;
+            int sum = carry;
 
             // if nodes are left in any list, we add their data in newVal.
-            if (first != null) {
-                newVal = newVal + first.data;
+            if (firstList != null) {
+                sum += firstList.data;
+                firstList = firstList.nextNode;
             }
-            if (second != null) {
-                newVal = newVal + second.data;
+            if (secondList != null) {
+                sum += secondList.data;
+                secondList = secondList.nextNode;
             }
 
             // updating carry.
-            carry = newVal / 10;
+            carry = sum / 10;
 
-            // using modulus to store only a single digit at that place.
-            newVal = newVal % 10;
+            // using modulus to get the node value
+            sum = sum % 10;
 
             /**
-             * creating new node which gets connected with other nodes that we get after
-             * calculating sum of respective digits.
+             * creating a new node and store the node value
              */
-            Node newNode = aLl.new Node(newVal);
+            Node newNode = aLl.new Node(sum);
 
-            // storing the previously made nodes in the link part of new node.
-            newNode.nextNode = sum;
+            // Connecting the previously made nodes
+            newNode.nextNode = ans;
 
             // making the new node as the first node of all previously made node.
-            sum = newNode;
-
-            // moving ahead in both lists.
-            if (first != null) {
-                first = first.nextNode;
-            }
-
-            if (second != null) {
-                second = second.nextNode;
-            }
+            ans = newNode;
         }
 
-        return sum;
+        // Return the node
+        return ans;
     }
 
     // Method to reverse the list
