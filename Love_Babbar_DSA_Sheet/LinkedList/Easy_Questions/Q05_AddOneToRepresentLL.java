@@ -100,10 +100,8 @@ public class Q05_AddOneToRepresentLL {
         // Initialize the head node value in temp
         tempNode = head;
 
-        // Declare a variable & initialize it by 1
-        int carry = 1;
-
-        while (carry != 0) {
+        // Traverse through the list
+        while (tempNode != null) {
 
             // Adding one to current node
             tempNode.data++;
@@ -164,9 +162,9 @@ public class Q05_AddOneToRepresentLL {
         tempNode = headNode;
 
         while (tempNode != null) {
-            System.out.print(tempNode.data + " ");
+            System.out.print(tempNode.data + "->");
             tempNode = tempNode.nextNode;
         }
-        System.out.println();
+        System.out.println("Null");
     }
 }
