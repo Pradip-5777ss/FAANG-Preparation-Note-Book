@@ -102,65 +102,56 @@ public class Q11_PalindromicLinkedList {
      * Method to check wheather the list is palindrome or not
      * 
      * @param head
-     * @return
+     * @return the result true/false
      */
     private static boolean is_palindrome(Node head) {
 
-        // Declare a variable and initialize by 0
-        int size = 0;
-        tempNode = head;
-
-        // Finding the number of nodes in the list
-        while (tempNode != null) {
-            size++;
-            tempNode = tempNode.nextNode;
-        }
-
         /**
-         * If the size of the linked list is less than 2 then the linked list is
-         * palindrome
+         * Base Case.
+         * If single node present return true
          */
-        if (size < 2) {
+        if (head.nextNode == null) {
             return true;
         }
 
-        // Store the address of the head in temp node
+        // Store the content of head into a dummy node
         tempNode = head;
 
-        /**
-         * now, we split list into 2 halves. In case of odd number of elements, first
-         * half will have the middle element.
-         */
-        int mid = (size - 1) / 2;
+        // step - 1 [find the middle of the list]
+        Node midNode = getMid(tempNode);
 
-        // Using a pointer to get to middle element element to get second half of list
-        while (mid > 0) {
-            tempNode = tempNode.nextNode;
-            mid--;
-        }
+        // step -2 [reverse the next part of middle]
+        Node temp = midNode.nextNode;
+        midNode.nextNode = reverse_list(temp);
 
-        /**
-         * temp now holds address of the last element of first half Storing the element
-         * of second half separately in head2
-         */
-        Node head2 = tempNode.nextNode;
-        tempNode.nextNode = null;
+        // step -3 [compare both side]
+        Node head1 = tempNode;
+        Node head2 = midNode.nextNode;
+        boolean res = is_Identical(head1, head2);
 
-        // Reverse the second half of list
-        head2 = reverse_list(head2);
+        // Step - 4 [Reverse the list to get its original form]
+        temp = midNode.nextNode;
+        midNode.nextNode = reverse_list(temp);
 
-        /**
-         * We check wheather both halves are identical or not (For odd number of
-         * elements first half will have one extra element)
-         */
-        boolean res = is_Identical(head, head2);
-
-        // Again reverse the second list and connect it to first half
-        head2 = reverse_list(head2);
-        tempNode.nextNode = head2;
-
-        // returning true if the list is palindrome else false
+        // return the result
         return res;
+    }
+
+    /**
+     * Method to find the middle of the list
+     * 
+     * @param head
+     * @return the middle node
+     */
+    private static Node getMid(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.nextNode != null) {
+            fast = fast.nextNode.nextNode;
+            slow = slow.nextNode;
+        }
+        return slow;
     }
 
     // Method to check wheather two list are identical or not
@@ -173,7 +164,6 @@ public class Q11_PalindromicLinkedList {
             head1 = head1.nextNode;
             head2 = head2.nextNode;
         }
-
         return true;
     }
 
