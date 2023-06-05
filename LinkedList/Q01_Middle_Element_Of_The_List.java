@@ -1,25 +1,25 @@
 /**
- * @author Pradip Sahoo
- * Created on 05/06/2023
- * ----------------------------------------
- * Middle of the Linked List.
+ ** Middle of the Linked List.
  * Write a program to find the middle element of a linked list. Given the head
  * of a singly linked list, return the middle node of the linked list. If there
  * are two middle nodes, return the second middle node.
  * 
  * Example 1:
- *  Input: head = [1,2,3,4,5]
- *  Output: [3,4,5]
+ *  Input: head = [1->2->3->4->5]
+ *  Output: 3
  *  Explanation: The middle node of the list is node 3.
  * 
  * Example 2:
- *  Input: head = [1,2,3,4,5,6]
- *  Output: [4,5,6]
+ *  Input: head = [1->2->3->4->5->6]
+ *  Output: 4
  *  Explanation: Since the list has two middle nodes with values 3 and 4, we
  *  return the second one.
  * 
  * Time Complexity : O(N)
  * Space Complexity : O(1)
+ * -----------------------------------------------------
+ * @author  Pradip Sahoo
+ * @since   05/06/2023
  */
 package LinkedList;
 
