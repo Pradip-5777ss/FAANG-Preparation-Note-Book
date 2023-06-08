@@ -36,7 +36,7 @@ package LinkedList;
 import java.util.Scanner;
 
 public class Q04_Find_First_Node_Of_Loop_In_LinkedList {
-    
+
     public class Node {
         int data;
         Node nextNode;
@@ -133,12 +133,18 @@ public class Q04_Find_First_Node_Of_Loop_In_LinkedList {
          ** pace They will meet at the first node of the loop
          */
         fast = head;
+
+        /**
+         ** Step 6: Iterate a loop, that continues until the fast and slow pointers meet.
+         ** In each iteration of the loop, move the fast and slow pointers one step
+         ** forward.
+         */
         while (fast != slow) {
             fast = fast.nextNode;
             slow = slow.nextNode;
         }
 
-        // * Step 6: Return the first node of the loop
+        // * Step 7: Return the first node of the loop
         return slow;
     }
 
