@@ -128,10 +128,7 @@ public class Q04_Find_First_Node_Of_Loop_In_LinkedList {
             return null;
         }
 
-        /**
-         ** Step 5: Reset the fast pointer to the head and move both pointers at the same
-         ** pace They will meet at the first node of the loop
-         */
+        // * Step 5: Reset the fast pointer to the head
         fast = head;
 
         /**
