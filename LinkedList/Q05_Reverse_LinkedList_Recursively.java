@@ -86,9 +86,14 @@ public class Q05_Reverse_LinkedList_Recursively {
 
         // * Step 4: Reverse the connection between the current node and its next node
         temp.nextNode.nextNode = temp;
+
+        /**
+         ** Step 5: Set the nextNode of the current node to null, breaking the connection
+         ** to the previous node.
+         */
         temp.nextNode = null;
 
-        // * Step 5: Return the new head of the reversed list
+        // * Step 6: Return the new head of the reversed list
         return newHead;
     }
 
